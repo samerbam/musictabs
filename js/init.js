@@ -7,13 +7,18 @@
 })(jQuery); // end of jQuery name space
 
 $(document).ready(function(){
+	$('#autocomplete-input').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": null
+      },
+    });
+
 	$('.collapsible').collapsible();
 
-	$('input.autocomplete').autocomplete({
-		data: {
-			"Apple": null,
-			"Microsoft": null,
-			"Google": 'https://placehold.it/250x250'
-		},
+	$(document).ready(function(){
+		$('.tooltipped').tooltip();
 	});
+
 });
