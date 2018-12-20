@@ -7,14 +7,13 @@
 
 	<!-- CSS  -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <body>
 	<nav class="light-blue lighten-1" role="navigation">
 		<div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Music Tabs</a>
-
 			<ul class="right hide-on-med-and-down">
 				<a class="btn-floating light-blue lighten-1 waves-effect waves-light btn-flat" href="login.html">
 					<i class="material-icons">person</i>
@@ -33,44 +32,37 @@
 
 
 
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">search</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Autocomplete</label>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 	<div class="container">
 		<h1>Ukukele</h1>
 		
 
-<!-- 			<form class="col s12">
-				<div class="row">
-					<div class="input-field col s12">
-						<i class="material-icons prefix">search</i>
-						<input id="icon_prefix" type="text" class="validate">
-						<label for="icon_prefix">Search</label>
-					</div>
+		<div class="row">
+			<div class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+				<i class="material-icons prefix">search</i>
+				<input type="text" id="search-box" class="autocomplete popout">
+				<label for="search-box">Search</label>
 				</div>
-			</form>
- -->
+			</div>
+			</div>
+		</div>
+
+		<ul class="collapsible popout" id="search-results"></ul>
+
+
 
 
 
 		<h4>Top 6 Songs:</h4>
 
-		<ul class="collapsible">
-			
-			<li>
+		<ul class="collapsible popout" id="top-six">
+			<!--EXAMPLE LISTING: <li>
 				<div class="collapsible-header">
 					<i class="material-icons light-blue-text">looks_one</i>
-					<span id="song_name">
+					<span class="song_name">
 						Lost Boy
 					</span>
 					<span id="song_main_genre" class="new badge light-blue lighten-1" data-badge-caption="">Piano</span>
@@ -84,7 +76,7 @@
 											<b>
 												&nbsp;Artist:&nbsp;
 											</b>
-											<span id="song_artist">
+											<span class="song_artist">
 												Ruth B
 											</span>
 										</p>
@@ -93,7 +85,7 @@
 											<b>
 												&nbsp;Album:&nbsp;
 											</b>
-											<span id="song_album">
+											<span class="song_album">
 												The Intro
 											</span>
 										</p>
@@ -102,7 +94,7 @@
 											<b>
 												&nbsp;Genre:&nbsp;
 											</b>
-											<span id="song_genres">
+											<span class="song_genres">
 												Piano, Vocalist
 											</span>
 										</p>
@@ -111,7 +103,7 @@
 											<b>
 												&nbsp;Chords:&nbsp;
 											</b>
-											<span id="song_chords">
+											<span class="song_chords">
 												C D Em G
 											</span>
 										</p>
@@ -123,10 +115,12 @@
 									<i class="material-icons">stars</i>
 									<b class="valign-wrapper">
 										&nbsp;Rating:&nbsp;
-										<i class="material-icons">star</i>
-										<i class="material-icons">star</i>
-										<i class="material-icons">star</i>
-										<i class="material-icons">star_half</i>
+										<span class="song_rating valign-wrapper">
+											<i class="material-icons">star</i>
+											<i class="material-icons">star</i>
+											<i class="material-icons">star</i>
+											<i class="material-icons">star_half</i>
+										</span>
 									</b>
 									<div class="right-align">
 										<a href="#">
@@ -137,128 +131,17 @@
 							</span>
 						</div>
 					</div>
-				</div>
-			</li>
-
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons light-blue-text">looks_one</i>
-					<span id="song_name">
-						Lost Boy
-					</span>
-					<span id="song_main_genre" class="new badge light-blue lighten-1" data-badge-caption="">Piano</span>
-				</div>
-				<div class="collapsible-body">
-					<div class="row">
-						<div class="col 6s">
-							<span>
-										<p class="valign-wrapper">
-											<i class="material-icons">people</i>
-											<b>
-												&nbsp;Artist:&nbsp;
-											</b>
-											<span id="song_artist">
-												Ruth B
-											</span>
-										</p>
-										<p class="valign-wrapper">
-											<i class="material-icons">album</i>
-											<b>
-												&nbsp;Album:&nbsp;
-											</b>
-											<span id="song_album">
-												The Intro
-											</span>
-										</p>
-										<p class="valign-wrapper">
-											<i class="material-icons">palette</i>
-											<b>
-												&nbsp;Genre:&nbsp;
-											</b>
-											<span id="song_genres">
-												Piano, Vocalist
-											</span>
-										</p>
-										<p class="valign-wrapper">
-											<i class="material-icons">music_note</i>
-											<b>
-												&nbsp;Chords:&nbsp;
-											</b>
-											<span id="song_chords">
-												C D Em G
-											</span>
-										</p>
-							</span>
-						</div>
-						<div class="col s7 push-s5">
-							<span>
-								<p class="valign-wrapper">
-									<i class="material-icons">stars</i>
-									<b class="valign-wrapper">
-										&nbsp;Rating:&nbsp;
-										<i class="material-icons">star</i>
-										<i class="material-icons">star</i>
-										<i class="material-icons">star</i>
-										<i class="material-icons">star_half</i>
-									</b>
-									<div class="right-align">
-										<a href="#">
-											<i class="material-icons medium">keyboard_arrow_right</i>
-										</a>
-									</div>
-								</p>
-							</span>
-						</div>
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons light-blue-text">looks_3</i>
-					Thrid
-					<span class="new badge light-blue lighten-1" data-badge-caption="Pop"></span>
-				</div>
-				<div class="collapsible-body">
-					<span>Lorem ipsum dolor sit amet.</span>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons light-blue-text">looks_4</i>
-					Fourth
-					<span class="new badge light-blue lighten-1" data-badge-caption="Pop"></span>
-				</div>
-				<div class="collapsible-body">
-					<span>Lorem ipsum dolor sit amet.</span>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons light-blue-text">looks_5</i>
-					Fifth
-					<span class="new badge light-blue lighten-1" data-badge-caption="Pop"></span>
-				</div>
-				<div class="collapsible-body">
-					<span>Lorem ipsum dolor sit amet.</span>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons light-blue-text">looks_6</i>
-					Sixth
-					<span class="new badge light-blue lighten-1" data-badge-caption="Pop"></span>
-				</div>
-				<div class="collapsible-body">
-					<span>Lorem ipsum dolor sit amet.</span>
-				</div>
-			</li>
+				</div></li> -->
+			<!--TO CREATE A NEW LISTING CALL createListing()-->
 		</ul>
 	</div>
 
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="js/materialize.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="js/helpers.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/topSongs.js"></script>
 	<script src="js/init.js"></script>
 
 	</body>
